@@ -5,9 +5,47 @@ Nossa principal finalidade é a criação de uma rede social regional integrada 
 
 ## Sobre este documento
 
-Esse desafio é separado em etapas
+Esse desafio é separado em etapas! Quanto mais etapas forem concluídas com êxito, mais notoriedade você receberá! Atente-se para as avaliações abaixo:
 
-Feel free to increase the difficulty levels by expanding the challenges based on your own ideas.
+### Avaliação
+Seu desafio deverá ser disponibilizado por meio de um repositório Git (podendo este ser hosteado da forma que for mais conveniente a você, por exemplo usando uma plataforma como GitHub ou GitLab). 
+A única restrição é que o repositório deve ser acessível à equipe do Pescarte. Como o PEA Pescarte é open-source, recomendamos que seu proheto seja público!
+
+#### Critérios
+Uma vez que ele seja disponibilizado a nós, a avaliação de seu código será feita de acordo com os seguintes critérios, em ordem aproximada de importância:
+
+##### Ausência de bugs
+Seu código deve funcionar corretamente, atendendo a todos os requisitos da especificação representada por este documento.
+
+##### Legibilidade e Formatação
+Lembre-se que um trecho de código em geral será lido muito mais vezes do que escrito. Escreva seu código pensando em quem for lê-lo. Busque minimizar
+dificuldades de leitura; Use a indentação a seu favor; Siga boas práticas de formatação de código da linguagem `Elixir`.
+
+##### Clareza
+Seu código deve deixar a sua intenção clara para o leitor. Tanto quanto seja plausível, deve ser possível entender o que o código faz apenas lendo ele.
+Explicações usando comentários deveriam ser redundantes.
+
+##### Desacoplamento
+Seu código não deve criar dependências desnecessárias entre módulos.
+Ao alterar uma parte do código, não deveria ser necessário alterar partes sem
+relação lógica com a parte alterada.
+
+##### Extensibilidade
+Embora este desafio seja apenas teórico, busque considerar o código que você
+desenvolverá como se ele fosse ser apenas uma parte de uma solução maior. Pense
+no esforço necessário para realizar adições ao seu código e busque
+minimizá-lo.
+
+##### Manutenibilidade
+Escreva seu código como se ele fosse ser mantido por muito tempo após você
+criá-lo, por várias pessoas com níveis de experiência variados. Pense no
+esforço necessário para alterar seu código e busque minimizá-lo. Se eu quiser mudar apenas um aspecto do código, precisarei mudar quantas partes dele?
+
+##### Adicionais
+
+- Testes unitários e de integração
+- Validações e erros bem estruturados
+
 
 ## Desafio 1: Crie uma LiveView que renderiza diferentes tipos de botões
 
