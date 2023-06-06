@@ -65,9 +65,9 @@ Com a tarefa escolhida, clone o [repositório do projeto](https://github.com/pea
 
 Por exemplo:
 - `usuario-github`: zoedsoupe
-- `titulo-tarefa`: componente uplaod
+- `titulo-tarefa`: tela de listagem de relatórios
 
-Resultando no nome: `zoedsoupe/cria-componente-upload`.
+Resultando no nome: `zoedsoupe/implementa-tela-listagem-relatorios`.
 
 Com isso feito, bom desenvolvimento! Esperamos que se divirta nessa jornada!
 
