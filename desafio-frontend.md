@@ -1,116 +1,52 @@
 # Desafio de Programação Front-End
 
-Boas vindas ao PEA Pescarte e agradecemos seu interesse no projeto! Somos uma organização com foco na mitigação exigida pelo licenciamento ambiental federal, conduzido pelo IBAMA e pela Petrobras.
-Nossa principal finalidade é a criação de uma rede social regional integrada por pescadores artesanais e por seus familiares, buscando, por meio de processos educativos, promover, fortalecer e aperfeiçoar a sua organização comunitária e a sua qualificação profissional, bem como o seu envolvimento na construção participativa e na implementação de projetos de geração de trabalho e renda.
+Boas vindas ao PEA Pescarte! Agradecemos seu interesse em contribuir com nosso projeto, que se concentra na mitigação de impactos ambientais e no fortalecimento das comunidades de pescadores artesanais e suas famílias. Este desafio visa avaliar suas habilidades em desenvolvimento front-end, utilizando tecnologias modernas e práticas de codificação.
 
-## Sobre este documento
+## Sobre este Desafio
 
-Esse desafio é separado em etapas! Quanto mais etapas forem concluídas com êxito, mais notoriedade você receberá! Atente-se para as avaliações abaixo:
+O desafio consiste em várias tarefas, cada uma projetada para avaliar diferentes aspectos da sua capacidade como desenvolvedor front-end. Conforme você avança, as tarefas aumentam em complexidade.
 
-### Avaliação
-Seu desafio deverá ser disponibilizado por meio de um repositório Git (podendo este ser hosteado da forma que for mais conveniente a você, por exemplo usando uma plataforma como GitHub ou GitLab). 
-A única restrição é que o repositório deve ser acessível à equipe do Pescarte. Como o PEA Pescarte é open-source, recomendamos que seu proheto seja público!
+## Avaliação
 
-#### Critérios
-Uma vez que ele seja disponibilizado a nós, a avaliação de seu código será feita de acordo com os seguintes critérios, em ordem aproximada de importância:
+Seu desafio será avaliado com base no código fonte disponibilizado em um repositório Git de sua escolha (GitHub, GitLab, etc.). O repositório deve ser acessível pela equipe do Pescarte. Como nosso projeto é open-source, recomendamos que seu projeto também seja público.
 
-##### Ausência de bugs
-Seu código deve funcionar corretamente, atendendo a todos os requisitos da especificação representada por este documento.
+### Critérios de Avaliação
 
-##### Legibilidade e Formatação
-Lembre-se que um trecho de código em geral será lido muito mais vezes do que escrito. Escreva seu código pensando em quem for lê-lo. Busque minimizar
-dificuldades de leitura; Use a indentação a seu favor; Siga boas práticas de formatação de código da linguagem `Elixir`.
+Os seguintes critérios serão considerados, por ordem de importância:
 
-##### Clareza
-Seu código deve deixar a sua intenção clara para o leitor. Tanto quanto seja plausível, deve ser possível entender o que o código faz apenas lendo ele.
-Explicações usando comentários deveriam ser redundantes.
+- **Ausência de bugs**: O código deve funcionar conforme especificado.
+- **Legibilidade e Formatação**: O código deve ser fácil de ler e seguir as convenções de formatação.
+- **Clareza**: A intenção do código deve ser evidente.
+- **Desacoplamento**: Independência entre os módulos do código.
+- **Extensibilidade**: Facilidade para adicionar novas funcionalidades.
+- **Manutenibilidade**: Facilidade para manter e alterar o código.
+- **Adicionais**: Inclusão de testes unitários e de integração, validações e tratamento de erros bem estruturados.
 
-##### Desacoplamento
-Seu código não deve criar dependências desnecessárias entre módulos.
-Ao alterar uma parte do código, não deveria ser necessário alterar partes sem
-relação lógica com a parte alterada.
+## Desafios
 
-##### Extensibilidade
-Embora este desafio seja apenas teórico, busque considerar o código que você
-desenvolverá como se ele fosse ser apenas uma parte de uma solução maior. Pense
-no esforço necessário para realizar adições ao seu código e busque
-minimizá-lo.
+### Desafio 1: LiveView com Botões Estilizados
 
-##### Manutenibilidade
-Escreva seu código como se ele fosse ser mantido por muito tempo após você
-criá-lo, por várias pessoas com níveis de experiência variados. Pense no
-esforço necessário para alterar seu código e busque minimizá-lo. Se eu quiser mudar apenas um aspecto do código, precisarei mudar quantas partes dele?
+**Objetivo**: Implementar uma LiveView que exiba uma lista de botões com diferentes estilos. Ao clicar em um botão, um alerta deve ser mostrado no navegador.
 
-##### Adicionais
+### Desafio 2: Validações Dinâmicas de Formulário
 
-- Testes unitários e de integração
-- Validações e erros bem estruturados
+**Objetivo**: Criar um formulário com validações dinâmicas para diferentes campos de entrada, utilizando LiveView para uma interação instantânea com o usuário.
 
+### Desafio 3: Implementação de Componente do Design System
 
-## Desafio 1: Crie uma LiveView que renderiza diferentes tipos de botões
+**Passos**:
+1. Escolha uma tarefa de implementação de componente na página de issues do repositório do projeto.
+2. Comente na issue escolhida para indicar o início do desenvolvimento.
+3. Clone o repositório e trabalhe em uma nova branch seguindo o padrão `<usuario-github>/<titulo-tarefa>`.
 
-> Dificuldade: fácil
+### Desafio 4: Implementação de uma Tela do Layout
 
-Crie um template `Phoenix` com `Live View` que renderiza uma lista de botões com estilos diferentes! Quando um botão for clicado, um alerta no browser deve ser renderizado!
+**Passos**:
+1. Escolha uma tarefa de implementação de tela na página de issues do projeto.
+2. Siga o mesmo processo do Desafio 3 para iniciar o desenvolvimento.
 
-## Desafio 2: Validações dinâmicas de formulário
+## Submissão
 
-> Dificuldade: intermediária
+Ao concluir os desafios, crie uma Pull Request para o repositório do projeto com suas modificações. Certifique-se de detalhar o que foi desenvolvido e qualquer outra informação relevante para a avaliação.
 
-Crie um template `Phoenix` com `Live View` que renderiza um formulário com diversos tipos de campos de entrada (`inputs`). Implemente validações dinâmicas nesse formilário para validar as entradas de uma pessoa usuária enquanto ela digita.
-
-## Desafio 3: Implemente um componente a partir do Design System do projeto
-
-> Dificuldade: intermediária
-
-### Passo 1
-
-Vá para a [páginas de issues](https://github.com/peapescarte/pescarte-plataforma/issues) e escolha uma tarefa de componente a ser implementado! Cada componente possui sua própria peculiariedade e descrição. Lembre-se de respeitar o [Design System](https://www.figma.com/file/PhkO37jz3ofCHwc1pHtPyz/PESCARTE?node-id=0%3A1) do projeto e que o [Figma do projeto](https://www.figma.com/file/PhkO37jz3ofCHwc1pHtPyz/PESCARTE?type=design&node-id=0%3A1&t=ub2EUBgcoRSbDo2I-1) sempre está acessível!
-
-Após escolher qual `issue` será desenvolvida, comente na mesma atestando que a implementação da mesma será iniciada. Dessa forma, a [Zoey](https://github.com/zoedsoupe) irá assinalar a `issue` para seu usuário.
-
-### Passo 2
-
-Com a tarefa escolhida, clone o [repositório do projeto](https://github.com/peapescarte/pescarte-plataforma) e crie uma nova branch a partir da `main`, com o seguinte padrão de nome: `<usuario-github>/<titulo-tarefa>`.
-
-Por exemplo:
-- `usuario-github`: zoedsoupe
-- `titulo-tarefa`: componente uplaod
-
-Resultando no nome: `zoedsoupe/cria-componente-upload`.
-
-Com isso feito, bom desenvolvimento! Esperamos que se divirta nessa jornada!
-
-### Passo 3
-
-Ao finalizar seu desenvolvido ou caso queria feedback durante o desenolvimento, pasta [criar uma Pull Request](https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) no repositório do projeto! Assim que possíve a [Zoey](https://github.com/zoedsoupe) irá revisar e dará um retorno!
-
-Sua PR sendo aprovada, o desafio estará concluído!
-
-## Desafio 4: Implemente uma tela a partir do layout do projeto
-
-> Dificuldade: avançada
-
-### Passo 1
-
-Vá para a [páginas de issues](https://github.com/peapescarte/pescarte-plataforma/issues) e escolha uma tarefa de desenvolvimento de tela a ser implementado! Cada tela possui sua própria peculiariedade e descrição. Lembre-se de respeitar o [Design System](https://www.figma.com/file/PhkO37jz3ofCHwc1pHtPyz/PESCARTE?node-id=0%3A1) do projeto e que o [Figma do projeto](https://www.figma.com/file/PhkO37jz3ofCHwc1pHtPyz/PESCARTE?type=design&node-id=0%3A1&t=ub2EUBgcoRSbDo2I-1) sempre está acessível!
-
-Após escolher qual `issue` será desenvolvida, comente na mesma atestando que a implementação da mesma será iniciada. Dessa forma, a [Zoey](https://github.com/zoedsoupe) irá assinalar a `issue` para seu usuário.
-
-### Passo 2
-
-Com a tarefa escolhida, clone o [repositório do projeto](https://github.com/peapescarte/pescarte-plataforma) e crie uma nova branch a partir da `main`, com o seguinte padrão de nome: `<usuario-github>/<titulo-tarefa>`.
-
-Por exemplo:
-- `usuario-github`: zoedsoupe
-- `titulo-tarefa`: tela de listagem de relatórios
-
-Resultando no nome: `zoedsoupe/implementa-tela-listagem-relatorios`.
-
-Com isso feito, bom desenvolvimento! Esperamos que se divirta nessa jornada!
-
-### Passo 3
-
-Ao finalizar seu desenvolvido ou caso queria feedback durante o desenolvimento, pasta [criar uma Pull Request](https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) no repositório do projeto! Assim que possíve a [Zoey](https://github.com/zoedsoupe) irá revisar e dará um retorno!
-
-Sua PR sendo aprovada, o desafio estará concluído!
+Boa sorte e esperamos que você se divirta desenvolvendo! Estamos ansiosos para ver suas contribuições e como elas ajudarão a enriquecer o PEA Pescarte.
