@@ -213,4 +213,75 @@ Então se itera pelo loop já começando pela segunda posição do vetor, caso o
 
 Bibliotecas usadas: `stdio.h`
 
+## Exercício 5: Mapear
 
+Função main:
+```c
+int main() {
+	int size = 0, *array_b;
+	printf("Size of array to map: ");
+	scanf("%d", &size);
+	int* array_a = (int*)calloc(size, sizeof(int));
+	getInts(array_a, size);
+
+    ...
+```
+A função main começa inicializando uma variável `size` e o ponteiro que guardará o resultado do mapeamento de uma função sobre o array. Ela então pede o tamanho do array que será mapeado, aloca e inicializa o array com calloc, e chama uma função para o usuário preencher o array.
+
+Função getInts:
+```c
+void getInts(int* arr, int size) {
+	int value = 0;
+	for (int i = 0; i < size; i++) {
+		scanf("%d", &value);
+		arr[i] = value;
+	}
+	return;
+}
+```
+A função recebe o nosso array inicial vazio e o tamanho do mesmo, e itera sob o array perguntando ao usuário qual valor deseja até que o array esteja cheio e retorna para main.
+
+Função main:
+```c
+    ...
+
+    array_b = mapear(array_a, size);
+
+    ...
+```
+A função `main` chama mapear e coloca seus resultados no `array_b`
+
+Função mapear:
+```c
+int* mapear(int* array, int size) {
+	int* tmp = (int*)calloc(size, sizeof(int));
+	for (int i = 0; i < size; i++) {
+		tmp[i] = pow(array[i], 2);
+	}
+	return tmp;
+}
+```
+A função mapear itera sob o array aplicando a cada elemento a formula `y = x^2` e colocando o resultado em um array temporario alocado dentro da própria função `mapear`, ao terminar ela retorna o ponteiro do array temporário que vira `array_b` na função `main`.
+
+Função main:
+```c
+	...
+
+	printArr(array_a, size);
+	printArr(array_b, size);
+	return 0;
+}
+```
++
+Função printArr:
+```c
+void printArr(int* array, int size) {
+	for(int i = 0; i < size; i++) {
+		printf("%d ", array[i]);
+	} printf("\n");
+	return;
+}
+
+```
+
+A função `main` então escreve os arrays no console usando um loop que itera sob o array e escreve seus elementos no console, em sequência finaliza o programa.

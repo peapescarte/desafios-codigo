@@ -27,15 +27,13 @@ void getInts(int* arr, int size) {
 }
 
 int main() {
-	int size = 0, *tmp, *array_b;
-	int* array_a = (int*)calloc(size, sizeof(int));
-	
+	int size = 0, *array_b;
 	printf("Size of array to map: ");
 	scanf("%d", &size);
+	int* array_a = (int*)calloc(size, sizeof(int));
 	getInts(array_a, size);
 	
-	tmp = mapear(array_a, size);
-	array_b = tmp;
+	array_b = mapear(array_a, size);
 	
 	printArr(array_a, size);
 	printArr(array_b, size);
