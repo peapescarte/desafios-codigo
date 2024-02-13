@@ -2,6 +2,9 @@
 
 Todos os exercícios solucionados usando C com uso mínimo de funções de biblioteca.
 
+`AVISO:`
+**Todas as resoluções poderiam ser mais robustas e implementar mais verificações de erros, mas por questão de simplicidade e como o objetivo era apenas resolver o exercício isso foi evitado, caso seja desejado é só entrar em contato que eu amplio qualquer um dos exercícios :)**
+
 ## Exercício 1: Fibonacci
 
 Função main:
