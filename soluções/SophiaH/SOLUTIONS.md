@@ -182,3 +182,35 @@ int isPalindrome(char* inputs) {
 A função cria dois iteradores, um na posição '0' e um na última posição do texto, verifica se essas duas posições são iguais, se não forem ja retorna falso, se forem, aumenta o iterador `len_a` e diminui o iterador `len_b` e continua verificando, se os iteradores se cruzarem sem retornar o texto todo foi verificado e se retorna '1' como verdadeiro.
 
 Bibliotecas usadas: `stdio.h`, `stdlib.h`, `string.h`, `ctype.h`
+
+##Exercício 4: Menor e Maior
+
+Função main:
+```c
+int main() {
+    int size = 5;
+	int array[5] = {-7, 9, 0, -5, 7};
+	int maior = array[0], menor = array[0];
+
+	for (int i = 1; i < size; i++) {
+		if (array[i] > maior) {
+			maior = array[i];
+		} else if (array[i] < menor) {
+			menor = array[i];
+		}
+	}
+
+	printf("Maior: %d\nMenor: %d", maior, menor);
+
+	return 0;
+}
+```
+A função começa inicializando um vetor de 5 digitos para o exercício mas seu método preferido de coletar dados do usuário pode ser usado.
+
+Duas variáveis são inicializadas já com o primeiro valor do vetor, `maior` e `menor`.
+
+Então se itera pelo loop já começando pela segunda posição do vetor, caso o número atual seja maior que `maior`, então atribuimos essa variável à `maior` e caso seja menor do que `menor`, atribuimos ela à `menor`. Assim no final do loop temos ambos os valores desejados e podemos escreve-los no console.
+
+Bibliotecas usadas: `stdio.h`
+
+
