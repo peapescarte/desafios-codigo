@@ -5,6 +5,9 @@ Todos os exercícios solucionados usando C com uso mínimo de funções de bibli
 `AVISO:`
 **Todas as resoluções poderiam ser mais robustas e implementar mais verificações de erros, mas por questão de simplicidade e como o objetivo era apenas resolver o exercício isso foi evitado, caso seja desejado é só entrar em contato que eu amplio qualquer um dos exercícios :)**
 
+`AVISO 2:`
+**Procurei usar o mínimo possível de funções disponibilizadas pelo C sem que ficasse programando funcionalidade básica do zero, já que senti que ia contra a ideia de fazer desafios de código, então alguns codígos são bem mais extensos do que se toda a funcionalidade do C tivesse sido usada, como no caso do exercício 2. Caso funcionalidade basica do C tivesse sido usada a resolução seria pegar input do usuario e fazer `printf("%s", strrev(input));` acabando o exercício em duas linhas.**
+
 ## Exercício 1: Fibonacci
 
 Função main:
