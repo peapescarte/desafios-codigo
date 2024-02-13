@@ -183,7 +183,7 @@ A função cria dois iteradores, um na posição '0' e um na última posição d
 
 Bibliotecas usadas: `stdio.h`, `stdlib.h`, `string.h`, `ctype.h`
 
-##Exercício 4: Menor e Maior
+## Exercício 4: Menor e Maior
 
 Função main:
 ```c
