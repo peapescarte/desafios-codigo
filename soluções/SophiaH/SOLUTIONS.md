@@ -63,3 +63,122 @@ Inicializa um array de texto usando um `string literal` o qual vai ser invertido
 
 Em seguida o código pega o tamanho do texto através da função `strlen` disponibilizada pela linguagem.
 Ponteiros então são criados no inicio e no fim do texto, os mesmos são trocados usando o método XOR, que troca duas variáveis de lugar sem a necessidade de uma terceira variavel. O ponteiro no inicio então avança uma posição e o do final regride uma posição até que ambos se passem ou se encontrem na mesma posição, assim o texto estará revertido e programa acaba.
+
+## Exercício 3: Palíndromo
+
+Função main:
+```c
+int main() {
+	char* inputs = calloc(50, sizeof(char));
+	
+	fgets(inputs, 50, stdin);
+
+    ...
+
+}
+```
+Um array de caracteres(string) é alocado para o input do usuário com tamanho 50.
+Então se pega a entrada do usuário, caso seja escrito mais do que 50 caracteres estes são descartados.
+
+Função main:
+```c
+    ...
+
+    char* pos;
+	if ((pos=strchr(inputs, '\n')) != NULL) {
+		*pos = '\0';
+	}
+
+    ...
+```
+Este trecho do código remove o nova linha deixado pra trás pelo usuário ao confirmar seu texto.
+
+Função main:
+```c
+    ...
+
+	InputToLower(inputs);
+	RemoveSpaces(inputs);
+	RemovePunct(inputs);
+
+    ...
+```
+Onde a limpeza do input do usuário é feita, ocorrendo a remoção de maiúsculas, espaços e pontuação.
+
+Função InputToLower:
+```c
+char* InputToLower(char* input) {
+    char* tmp = input;
+    for (; *input; ++input) {
+	    *input = tolower(*input);
+    }
+    input = tmp;
+    return input;
+}
+```
+A função começa salvando a posição inicial do ponteiro input. Então se itera por `input` usando a função `tolower()` fornecida pela biblioteca `ctype.h` em todos os caracteres, até que se acabe o texto. então retornamos o ponteiro para a posição inicial do texto e retornamos.
+
+Função RemoveSpaces:
+```c
+char* RemoveSpaces(char* input) {
+    char* tmp = input, *start = input;
+    do {
+       	while (*tmp == ' ') {
+            tmp++;
+        }
+    } while (*input++ = *tmp++);
+    input = start;
+    return input;
+}
+```
+Na fução `RemoveSpaces` salvamos o inicio do ponteiro e criamos uma copia temporaria para nos ajudar no processamento. Então entramos no loop `do-while` e se/enquanto o caracter atual for um espaço, nós avançamos o ponteiro temporário mas não o ponteiro principal. Assim, se estivermos apontando para o espaço no texto "ab c" acabaremos com o ponteiro principal apontando para o espaço e o temporário para a letra 'c', então verificamos a clausula de saída do `do-while` que pega o que está no ponteiro temporario e coloca no principal assim colocando a letra c sobre o espaço, removendo o mesmo. Essa operação acaba quando puxamos o caracter de fim de texto, dado que ele é '0' e funciona como falso, fechando o loop.
+
+Função RemovePunct:
+```c
+char* RemovePunct(char* input) {
+	char* tmp = input, *start = input;
+	do {
+		while (ispunct(*tmp)) {
+			tmp++;
+		}
+	} while (*input++ = *tmp++);
+	input = start;
+	return input;
+}
+```
+Exatamente igual a função `RemoveSpaces` mas verificamos se o caracter atual é algum tipo de pontuação usandoa função `ispunct` fornecida pela biblioteca `ctype.h`.
+
+Função main:
+```c
+    ...
+
+    puts(inputs);
+
+	if (isPalindrome(inputs)) {
+		printf("The input is a palindrome");
+		return 0;
+	} 
+	printf("The input is not a palindrome");
+	return 0;
+}
+```
+O fim da função main escreve no console a entrada do usuário ja limpa e chama a função `isPalindrome`, caso `input` seja um palindromo ele escreve que é fecha o programa, caso não seja, escreve que não é e fecha o programa.
+
+Função isPalindrome:
+```c
+int isPalindrome(char* inputs) {
+	int len_a = 0; 
+	int len_b = strlen(inputs) - 1;
+	
+	for (int i = len_a, j = len_b; i < j; i++, j--) {
+		if (inputs[i] != inputs[j]) {
+			printf("%d:%c != %d:%c", i, inputs[i], j, inputs[j]);
+			return 0;
+		}	
+	}
+	return 1;
+}
+```
+A função cria dois iteradores, um na posição '0' e um na última posição do texto, verifica se essas duas posições são iguais, se não forem ja retorna falso, se forem, aumenta o iterador `len_a` e diminui o iterador `len_b` e continua verificando, se os iteradores se cruzarem sem retornar o texto todo foi verificado e se retorna '1' como verdadeiro.
+
+Bibliotecas usadas: `stdio.h`, `stdlib.h`, `string.h`, `ctype.h`

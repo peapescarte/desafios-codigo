@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-char* punctuation(char* input) {
+char* RemovePunct(char* input) {
 	char* tmp = input, *start = input;
 	do {
 		while (ispunct(*tmp)) {
@@ -14,29 +14,24 @@ char* punctuation(char* input) {
 	return input;
 }
 
-char* spaces(char* input) {
+char* RemoveSpaces(char* input) {
 	char* tmp = input, *start = input;
 	do {
         	while (*tmp == ' ') {
-            		++tmp;
+            		tmp++;
         	}
     	} while (*input++ = *tmp++);
 	input = start;
 	return input;
 }
 
-char* lower(char* input) {
+char* InputToLower(char* input) {
 	char* tmp = input;
 	for (; *input; ++input) {
 		*input = tolower(*input);
 	}
 	input = tmp;
 	return input;
-}
-
-void Injector(char* inputs, char* function(char* input)) {
-	inputs = function(inputs);
-	return;
 }
 
 int isPalindrome(char* inputs) {
@@ -62,9 +57,9 @@ int main() {
 		*pos = '\0';
 	}
 
-	Injector(inputs, lower);
-	Injector(inputs, spaces);
-	Injector(inputs, punctuation);
+	InputToLower(inputs);
+	RemoveSpaces(inputs);
+	RemovePunct(inputs);
 
 	puts(inputs);
 
