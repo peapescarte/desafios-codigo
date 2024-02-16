@@ -139,3 +139,27 @@ void remover_caracteres(char *str)
 	free(temp_str);
 }
 ```
+
+## Encontrar o Maior e o Menor Número (Exercício 4)
+
+Esse desafio foi feito utilizando Python.
+
+- **Exercício 4:** Dada uma lista de números inteiros, escreva um algoritmo que identifique o maior e o menor número na lista. Por exemplo, para a lista [1, 2, 3, 4, 5], o maior número é 5 e o menor é 1.
+
+- **Explicação:** Nesse algoritmo optei por criar uma função que registra ambos indices do menor numero e maior (começando tudo no indice de 0), de forma que desde que uma das condições sejam cumpridas o indice do menor (se o valor no indice menor for maior que o elemento atual, troca o valor) ou maior (segue o mesmo contexto do anterior, porém nesse é se ele for menor que o atual troca) é atualizado.
+
+Basicameente oque esse algoritmo faz é registrar a primeira ocorrência de índice onde localizou ambos os extremos (menor e maior) de uma array e no final mostrar tanto sua posição quanto valor.
+
+```python
+def encontrar_menor_maior(arr):
+    if len(arr) <= 0: return print("Array Inválida")
+    menorI, maiorI = 0, 0
+    for i in range(1, len(arr)):
+        menorI = i if arr[menorI] > arr[i] else menorI
+        maiorI = i if arr[maiorI] < arr[i] else maiorI
+    print(f"O maior elemento na posição({maiorI}) = {arr[maiorI]}")
+    print(f"O menor elemento na posição({menorI}) = {arr[menorI]}")
+
+encontrar_menor_maior([1, 2, 3, 4, 5])
+# encontrar_menor_maior([4, 2, 3, 1, -1, 9, 6, 2, -1, 7, 9, 7, 6, 6])
+```
