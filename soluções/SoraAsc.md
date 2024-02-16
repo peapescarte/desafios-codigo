@@ -65,3 +65,77 @@ int main()
     return 0;
 }
 ```
+
+## Verificação de Palíndromo (Exercício 3)
+
+Esse desafio foi feito utilizando C.
+
+- **Exercício 3:** Escreva um algoritmo que verifique se uma palavra ou frase é um palíndromo. Um palíndromo é uma palavra, frase, número ou outra sequência de caracteres que lê o mesmo para frente e para trás, ignorando espaços, pontuação e capitalização.
+
+- **Explicação:** Nesse algoritmo é feito um tratamento da entrada visto na função `remover_caracteres`, onde alguns espaços e pontuações são ignorados. Também dentro dessa função, todo caracter é convertido para sua versão lowercase e logo após isso ocorrer todos caracteres que estão definidos no switch vão ser trocadas por um equivalente sem acentuação. Após esse tratamento ser feito, começa a parte de verificar se é palíndromo ou não (1 ou 0), começando pelo caso base verdadeiro que pode ocorrer de duas formas quando o indice da esquerda(start) e o da direita(end), se interligam, isso ocorre quando a palavra tem tamanho ímpar, no caso par é verificado se a distância dos indices das palavras é de apenas 1, se for e ambas forem iguais é retornado 1 verdadeiro. Fora isso tem a condição para a chamada recursiva que é similar ao caso verdadeiro, porém aqui só importa saber se os caracteres são o mesmo, se forem continua a recursividade até achar o caso verdadeiro ou, ou senão caso nenhum das duas condições sejam atendidas retorna 0, ou seja não é palíndromo.
+
+Resumindo, primeiro é feito um tratamento da string para remover todos os caracteres inválidos ou converter eles de forma a ficarem válidos, e logo após é feita a verificação para ver se é palíndromo ou não de forma recursiva, passando como parâmetro o indice da esquerda (start), o da direita(end) e o ponteiro da imagem em questão a ser analisada.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
+#include <ctype.h>
+
+int verificar_palindromo(char *str, int start, int end);
+void remover_caracteres(char *str);
+
+int main(int argc, char *argv[]) {
+	setlocale(LC_ALL, "Portuguese");
+	char string_test[] = "Á. grama,. é amarga,.,";
+	remover_caracteres(string_test);
+	printf("\nString Modificada: %s\n", string_test);
+
+	int v = verificar_palindromo(string_test, 0, strlen(string_test)-1);
+	if(v == 1) printf("E um Palindromo");
+	else printf("Nao e um Palindromo");
+
+	return 0;
+}
+
+int verificar_palindromo(char *str, int start, int end)
+{
+	if( (start == end) || (abs(start-end) == 1 && str[start] == str[end]) ) return 1;
+	else if(str[start] == str[end]) return verificar_palindromo(str, start+1, end-1);
+	return 0;
+}
+
+char trocar_caracteres_especiais(char letter)
+{
+	switch(letter)
+	{
+		case 'á': case 'à': case 'ã': case 'â': case 'ä': return 'a';
+		case 'é': case 'è': case 'ê': case 'ë': return 'e';
+		case 'í': case 'ì': case 'î': return 'i';
+		case 'ó': case 'ò': case 'õ': case 'ô': case 'ö': return 'o';
+		case 'ú': case 'ù': case 'û': case 'ü': return 'u';
+		case 'ç': return 'c';
+		default: return letter;
+	}
+}
+
+void remover_caracteres(char *str)
+{
+	int i = 0, str_index = 0;
+	int str_len = strlen(str);
+	char* temp_str = (char *)malloc((str_len + 1) * sizeof(char));
+	while(i < str_len)
+	{
+		if(str[i] != ' ' && str[i] != '.' && str[i] != ',')
+		{
+			temp_str[str_index] = trocar_caracteres_especiais(tolower(str[i]));
+			str_index++;
+		}
+		i++;
+	}
+	temp_str[str_index] = '\0';
+	strcpy(str, temp_str);
+	free(temp_str);
+}
+```
