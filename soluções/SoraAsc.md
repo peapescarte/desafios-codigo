@@ -23,3 +23,45 @@ def fibonacci(n):
 
 fibonacci(10)
 ```
+
+## Inverter uma String (Exercício 2)
+
+Esse desafio foi feito utilizando C.
+
+- **Exercício 2:** Escreva um algoritmo que receba uma string como entrada e retorne essa string invertida. Por exemplo, se a entrada for "abcd", a saída deve ser "dcba".
+
+- **Explicação:** Nesse algoritmo criei uma função que recebe uma string (um ponteiro de uma sequência de caracteres) e após calcular com o `strlen` o tamanho da string de entrada, ela é usada para criar uma nova referência na memória para a string de saída e posteriormente para inserir os caracteres da string de entrada na string de saída. Ou seja considerando que i comece em 0 e vai até o tamanho da string, será feito entrada[i] = saida[tamanho - i - 1]. Esse -1 é justamente para evitar o caracter nulo que indica o final da string (sem esse -1, a posição 0 já seria o final da string '\0' e tudo após isso seria desconsiderado), na variável tamanho não se leva isso em consideração, pois o `strlen` desconsidera ele.
+
+Resumidamente essa função recebe uma string e a percorre de trás para frente, inserindo cada caracter da mesma em outra string (a partir da sua posição inicial até a final -1, pois a final receberá o caracter nulo).
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void reverseString(char* s)
+{
+    size_t tamanho = strlen(s);
+    int i = 0;
+
+    // +1 para contemplar o caracter de fim da string
+    char *nova_string = malloc((tamanho + 1) * sizeof(char));
+
+    memset(nova_string, 0, tamanho); // Limpa o valor da nova_string, evitando lixo residual.
+
+    for(i = 0; i < tamanho; i++)
+        nova_string[i] = s[tamanho - i - 1];
+    nova_string[tamanho] = '\0'; // Adiciona o caracter de fim no final da string
+
+    printf("Entrada: %s\n", s);
+    printf("Saída: %s", nova_string);
+
+    free(nova_string);
+}
+
+int main()
+{
+    reverseString("abcd");
+    return 0;
+}
+```
