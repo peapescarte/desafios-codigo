@@ -1,8 +1,8 @@
-#Minhas soluções
+# Minhas soluções
 
 Segue abaixo as minhas soluções dos desafios, junto com suas explicações
 
-##Exercício 1: Fibonacci
+## Exercício 1: Fibonacci
 
 Objetivo: gerar os primeiros 10 números da sequência de Fibonacci
 
