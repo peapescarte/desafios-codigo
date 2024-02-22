@@ -59,4 +59,5 @@ antepenúltimo... assim até que todos caracteres forem trocados de posição.
 Na função `Array_Invert`, utiliza-se as variáveis `i` e `j` no for loop para informar para a função `Swap` quais
 elementos da string vão realizar a operação de troca de posição. `i` começa no inicio da string e vai subindo de
 acordo com o loop, enquanto `j` começa no fim e vai descendo. O loop finaliza quando `i` assumir um valor maior
-que `j`.
+que `j`, significando que todas as trocas necessárias para inverter foram realizadas, restando ao programa
+retornar o resultado da operação ao usuário.
