@@ -1,4 +1,4 @@
-DESAFIO 1
+DESAFIO 1.
 
 #include <iostream>
 using namespace std;
@@ -17,7 +17,7 @@ main()
 }
 _________________________________________________________________
 
-DESAFIO 2
+DESAFIO 2.
 
 #include <iostream>
 #include <string>
@@ -35,7 +35,7 @@ int main()
 }
 _________________________________________________________________
 
-DESAFIO 3
+DESAFIO 3.
 
 #include <iostream>
 #include <string>
@@ -68,7 +68,7 @@ int main()
 
 _________________________________________________________________
 
-DESAFIO 4
+DESAFIO 4.
 
 #include <iostream>
 using namespace std;
@@ -99,7 +99,7 @@ using namespace std;
 }
 _________________________________________________________________
 
-DESAFIO 5
+DESAFIO 5.
 
 #include <iostream>
 using namespace std;
