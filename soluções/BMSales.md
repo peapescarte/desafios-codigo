@@ -60,4 +60,3 @@ Na função `Array_Invert`, utiliza-se as variáveis `i` e `j` no for loop para 
 elementos da string vão realizar a operação de troca de posição. `i` começa no inicio da string e vai subindo de
 acordo com o loop, enquanto `j` começa no fim e vai descendo. O loop finaliza quando `i` assumir um valor maior
 que `j`.
-da string vão realizar a operação de troca. 
