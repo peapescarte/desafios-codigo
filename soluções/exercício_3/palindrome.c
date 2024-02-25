@@ -47,6 +47,15 @@ int Is_Punctuation(char character){
 	return 0;
 }
 
+int String_Length(char* string, int size){
+	for(int i = 0; i < size; i++){
+		if(string[i] == '\n' || string[i] == EOF){
+			return i;
+		}
+	}
+	return size;
+}
+
 int String_Clean(char* dirty, char* clean, int size_dirty){
 	int j = 0;
 	for(int i = 0; i < size_dirty; i++){
@@ -55,7 +64,7 @@ int String_Clean(char* dirty, char* clean, int size_dirty){
 				clean[j] = dirty[i] + 32;
 				j++;
 			}
-			else{
+			else if(dirty[i] != '\0'){
 				clean[j] = dirty[i];
 				j++;
 			}
@@ -82,17 +91,20 @@ void Is_Palindrome(char* string, int size){
 int main(){
 	char* clean = NULL;
 	char* string_a = NULL;
-	int size_clean = 0;
-	int size_a = 10;
+	int size_a, size_clean = 0;
+	int buffer_size = 101;
 
-	Array_Create(&string_a, size_a);
-	Array_Initialize(string_a, size_a);
+	Array_Create(&string_a, buffer_size);
+	Array_Initialize(string_a, buffer_size);
+
+	printf("Type something for the program (up to 100 characters)\n");
+	fgets(string_a, buffer_size, stdin);
+
+	size_a = String_Length(string_a, buffer_size);
+	
 	Array_Create(&clean, size_a);
 	Array_Initialize(clean, size_a);
 
-	string_a = "t) eNeT.?:";
-	Array_Print(string_a, size_a);
-	
 	size_clean = String_Clean(string_a, clean, size_a);
 	Array_Print(clean, size_clean);
 	

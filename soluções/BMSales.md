@@ -61,3 +61,8 @@ elementos da string vão realizar a operação de troca de posição. `i` começ
 acordo com o loop, enquanto `j` começa no fim e vai descendo. O loop finaliza quando `i` assumir um valor maior
 que `j`, significando que todas as trocas necessárias para inverter foram realizadas, restando ao programa
 retornar o resultado da operação ao usuário.
+
+## Exercício 3: Palíndromo
+
+**Objetivo:** Verificar se uma sequência de caractéres é um palíndromo ou não, independente da presença espaços,
+pontuação ou capitalização
