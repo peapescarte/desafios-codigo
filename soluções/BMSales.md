@@ -1,12 +1,15 @@
 # Minhas soluções
 
-Segue abaixo as minhas soluções dos desafios, junto com suas explicações
+Segue abaixo explicações das minhas soluções dos desafios, código completo de cada exercício pode ser acessadoem 
+sua respectiva pasta enumerada.
 
 ## Exercício 1: Fibonacci
 
 **Objetivo:** gerar os primeiros 10 números da sequência de Fibonacci
 
 ```c
+	...
+
 int main(){
 	int a = 0;
 	int b = 1;
@@ -39,7 +42,7 @@ avançam um passo na série, possibilitando a busca pelo próximo número.
 **Objetivo:** receber uma string e retornar ela invertida
 
 ```c
-...
+	...
 
 void Array_Invert(char* string, int size){
 	int j =	size - 1;
@@ -49,7 +52,7 @@ void Array_Invert(char* string, int size){
 	}
 }
 
-...
+	...
 ```
 
 A forma que o programa inverte a string é por meio da troca de posição de seus caracteres. Segue-se a lógica de
@@ -64,5 +67,114 @@ retornar o resultado da operação ao usuário.
 
 ## Exercício 3: Palíndromo
 
-**Objetivo:** Verificar se uma sequência de caractéres é um palíndromo ou não, independente da presença espaços,
+**Objetivo:** Verificar se uma sequência de caracteres é um palíndromo ou não, independente da presença de espaços,
 pontuação ou capitalização
+
+```c
+	...
+
+int Is_Punctuation(char character){
+	switch (character){
+		case ' ':
+			return 1;
+		case '.':
+			return 1;
+		case '!':
+			return 1;
+		case '?':
+			return 1;
+		case ',':
+			return 1;
+		case ':':
+			return 1;
+		case ';':
+			return 1;
+		case '(':
+			return 1;
+		case ')':
+			return 1;
+		case '-':
+			return 1;
+		case '"':
+			return 1;
+	}
+	return 0;
+}
+
+int String_Clean(char* dirty, char* clean, int size_dirty){
+	int j = 0;
+	for(int i = 0; i < size_dirty; i++){
+		if(!Is_Punctuation(dirty[i])){
+			if(dirty[i] >= 65 && dirty[i] <= 90){
+				clean[j] = dirty[i] + 32;
+				j++;
+			}
+			else if(dirty[i] != '\0'){
+				clean[j] = dirty[i];
+				j++;
+			}
+		}
+	}
+
+	return j;
+}
+
+	...
+```
+
+Antes de verificar se a string recebida pelo programa é um palíndromo, é necessário "limpa-la", isto é, remover
+espaços e pontuações presentes na string e transformar letras maiúsculas em letras minúsculas. Esse processo é 
+realizado com o uso de uma array "limpa", sendo preenchida somente com os caracteres relevantes da string original.
+
+Esse processo de limpeza é realizada com duas funções, o `String_Clean` e o `Is_Punctuation`.
+
+`String_Clean` percorre pela array `dirty` por meio de um loop. De caractere para caractere, ele verifica primeiro
+se o símbolo encontrado é diferente de alguma pontuação ou de um espaço por meio da função `Is_Punctuation`, que 
+retorna	um valor booleano por meio de um `switch` statement. 
+
+Se `Is_Punctuation` retornar falso, então verifica se o caractere é a uma letra maiúscula, adicionando a sua forma
+minúscula na array `clean` e incrementado a variável `j` em 1 (`j` informa o tamanho da string na array `clean`).
+Não sendo letra maiúscula, adiciona-se o caractere em `clean` caso ela não for o fim da string, e incrementa j.
+
+Terminando o loop em `String_Clean`, a função retorna o valor de `j`, informando o novo tamanho da string após a
+limpeza.
+
+```c
+	...
+
+	size_clean = String_Clean(string_a, clean, size_a);
+	Array_Print(clean, size_clean);
+	
+	Is_Palindrome(clean, size_clean);
+
+	...
+
+```
+
+```c
+
+	...
+
+void Is_Palindrome(char* string, int size){
+	int j = size - 1;
+	for(int i = 0; i <= j; i++){
+		if(string[i] != string[j]){
+			printf("Not a palindrome\n");
+			return;
+		}
+		else{
+			j--;
+		}
+	}
+	printf("Is a palindrome\n");
+}
+
+	...
+
+```
+
+Utilizando a string limpa e o tamanho dela informado pela função `String_Clean`, a função `Is_Palindrome` verifica
+se a string é de fato um palíndromo ou não por meio de comparações. Compara-se o primeiro elemento com o último,
+o segundo com o penúltimo, assim em diante até que seja encontrada uma descrepância, significando que não é um
+palíndromo. Ou até terminar de percorrer a string inteira, significando que não foram encontrados caracteres
+diferentes em posições simétricas da array, podendo afirmar então que a string é um palíndromo.
