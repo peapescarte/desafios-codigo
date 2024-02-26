@@ -22,7 +22,7 @@ void Array_Print(int* array, int size){
 
 void Array_Square(int* array_a, int* array_b, int size){
 	for(int i = 0; i < size; i++){
-		array_b[i] = pow(array_a[i], 2);
+		array_b[i] = array_a[i] * array_a[i];
 	}
 }
 

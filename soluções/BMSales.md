@@ -1,7 +1,7 @@
 # Minhas soluções
 
-Segue abaixo explicações das minhas soluções dos desafios, código completo de cada exercício pode ser acessadoem 
-sua respectiva pasta enumerada.
+Segue abaixo explicações das minhas soluções dos desafios, o código completo de cada exercício pode ser acessado
+em sua respectiva pasta enumerada.
 
 ## Exercício 1: Fibonacci
 
@@ -178,3 +178,71 @@ se a string é de fato um palíndromo ou não por meio de comparações. Compara
 o segundo com o penúltimo, assim em diante até que seja encontrada uma descrepância, significando que não é um
 palíndromo. Ou até terminar de percorrer a string inteira, significando que não foram encontrados caracteres
 diferentes em posições simétricas da array, podendo afirmar então que a string é um palíndromo.
+
+## Exercício 4: Maior e Menor Número
+
+**Objetivo:** encontrar o maior e o menor número em uma lista de números
+
+```c
+
+	...
+
+int Quicksort(int* array, int start, int last, int size) {
+	if (start >= last) {
+		return 0;
+	}
+	int pivot = start;
+	int lesser = last;
+	for (int i = last; i > start; i--) {
+		if (array[pivot] <= array[i]) {
+			Swap(&array[i], &array[lesser]);
+			lesser--;
+		}
+	}
+	Swap(&array[pivot], &array[lesser]);
+	Quicksort(array, start, lesser - 1, size);
+	Quicksort(array, lesser + 1, last, size);
+}
+
+	...
+
+```
+
+O maior e menor número de uma lista de números pode ser encontrada de uma forma bem simples. Basta ordernar a
+lista e verificar os números em cada ponta. No caso da ordem crescente, o menor número estará na primeira posição
+e o maior número estará na última posição.
+
+Minha solução:
+Ordernar lista com Quicksort.
+Menor número: o primeiro.
+Maior número: o último.
+
+**Nota:** eu resolvi dessa forma, porém eu aprendi que ela é ineficiente, por conta complexidade de tempo da
+operação de quicksort *nlogn*. Como foi essa a solução que eu cheguei por conta própria, eu manterei ela.
+
+## Exercício 5: Mapeamento de uma Lista
+
+Objetivo: aplicar a função f(x) = x² em todos os números de uma lista
+
+```c
+
+	...
+
+void Array_Square(int* array_a, int* array_b, int size){
+	for(int i = 0; i < size; i++){
+		array_b[i] = array_a[i] * array_a[i];
+	}
+}
+
+	...
+
+```
+
+O programa utiliza duas arrays, `array_a` e `array_b`. `array_a` é uma lista de números aleatórios e `array_b` é
+usada para guardar os resultados da função aplicada em cada número em `array_a`.
+
+No `Array_Square`, um for loop percorre pelos arrays, aplicando a função em um número na posição `i` do `array_a`
+e guardando o resultado na mesma posição em `array_b`.
+
+Terminando o loop, finaliza-se o mapeamento, com cada elemento em `array_b` informando o resultado da função 
+f(x) = x² aplicada em um elemento da mesma posição em `array_a`.
