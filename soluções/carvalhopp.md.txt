@@ -1,0 +1,125 @@
+DESAFIO 1.
+
+#include <iostream>
+using namespace std;
+
+main()
+{
+    int cont = 0, num1 = 0, num2 = 1, num3;
+
+    while (cont < 10) {
+        num3 = num1 + num2;
+        cout << num3 << " ";
+        num1 = num2, num2 = num3, cont++;
+    }
+
+    
+}
+_________________________________________________________________
+
+DESAFIO 2.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string palavra;
+	cout<< "Digite a palavra: ";
+	getline(cin, palavra);
+	for(int i=palavra.size()-1; i>=0; i--){
+		cout<<palavra[i];
+	}
+	return 0;
+}
+_________________________________________________________________
+
+DESAFIO 3.
+
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "portuguese");
+    string palavra, inv;
+    cout << "Digite a palavra: ";
+    cin >> palavra;
+    
+    for (int i = 0; i < palavra.size(); i++) {
+        palavra[i] = tolower(palavra[i]);
+    }
+
+    for (int i = palavra.size() - 1; i >= 0; i--) {
+        inv += palavra[i];
+    }
+ 
+    if (palavra == inv) {
+        cout << "Esta palavra é palíndromo";
+    } else {
+        cout << "Esta palavra não é palíndromo";
+    }
+
+    return 0;
+}
+
+_________________________________________________________________
+
+DESAFIO 4.
+
+#include <iostream>
+using namespace std;
+
+    main() {
+    setlocale(LC_ALL, "portuguese");
+    int tamanho, maior, menor;
+    cout << "Digite o tamanho da sequência: ";
+    cin >> tamanho;
+
+    int *vetor = new int[tamanho];
+
+        cout << "Digite o elemento 1 da sequência: ";
+        cin >> vetor[0];
+        maior = menor = vetor[0];
+
+        for (int i = 1; i < tamanho; i++) {
+            cout << "Digite o elemento " << i + 1 << " da sequência: ";
+            cin >> vetor[i];
+
+        if (vetor[i] > maior) {
+        maior = vetor[i];}
+        if (vetor[i] < menor) {
+        menor = vetor[i];}
+        }
+        cout << "O maior numero é: " << maior << endl;
+        cout << "O menor numero é: " << menor << endl;  
+}
+_________________________________________________________________
+
+DESAFIO 5.
+
+#include <iostream>
+using namespace std;
+
+    main() {
+    setlocale(LC_ALL, "portuguese");
+    int tamanho;
+    cout << "Digite o tamanho da sequência: ";
+    cin >> tamanho;
+
+    int *vetor = new int[tamanho];
+
+        for (int i = 0; i < tamanho; i++) {
+            cout << "Digite o elemento " << i+1 << " da sequência: ";
+            cin >> vetor[i];
+            vetor[i] = vetor[i] * vetor[i];
+        }
+
+        cout << "Elementos ao quadrado: ";
+        for (int i = 0; i < tamanho; i++) {
+            cout << vetor[i] << " ";
+        }
+}
