@@ -33,7 +33,7 @@ int main () {
 ## Exercicio 2 - Inverter uma String
 
 > Esse algoritmo recebe uma string do usuário e a retorna invertida através de uma função com um loop
-que a cada iteração adiciona, no final da string a ser retornada (append), o ultimo caractere que ainda não foi adicionado da string original
+> que a cada iteração adiciona, no final da string a ser retornada (append), o ultimo caractere que ainda não foi adicionado da string original
 
 ```Java 
 
@@ -67,9 +67,9 @@ public class reverseString {
 ## Exercicio 3 - Verificação de palíndromo
 
 > Esse algoritmo recebe uma sequência de caracteres do usuário e chama uma função de retorno booleano, em que
-é realizada uma expressão regular para remover pontuação, espaços e capitalização e em seguida itera sobre
-cada caractere da entrada limpa, sendo que a iteração ocorre simultaneamente do início para o fim e do fim para o 
-início, retornando falso se encontrar uma instância em que os caracteres não são iguais.
+> é realizada uma expressão regular para remover pontuação, espaços e capitalização e em seguida itera sobre
+> cada caractere da entrada limpa, sendo que a iteração ocorre simultaneamente do início para o fim e do fim para o 
+> início, retornando falso se encontrar uma instância em que os caracteres não são iguais.
 
 ```Java
 
@@ -115,9 +115,9 @@ public class Palindrome {
 ## Exercicio 4 - Encontrar o maior e o menor número
 
 > Esse algoritmo preenche uma lista com 10 valores aleatórios e a exibe na tela; então, chama uma função cujo retorno será
-um array com os extremos numéricos da lista e a imprimir na tela. A função declara um maior numero e um menor numero com base
-nos limites possíveis de inteiros da lista a receber como parâmetro e a percorre, mudando o valor do maior numero e menor número quando
-encontra, respectivamente, um número maior ou menor que o valor atual das variáveis.
+> um array com os extremos numéricos da lista e a imprimir na tela. A função declara um maior numero e um menor numero com base
+> nos limites possíveis de inteiros da lista a receber como parâmetro e a percorre, mudando o valor do maior numero e menor número quando
+> encontra, respectivamente, um número maior ou menor que o valor atual das variáveis.
 
 ```Java 
 
@@ -169,7 +169,7 @@ public class ListExtremes {
 ## Exercicio 5 - Mapeamento de lista
 
 > Esse algoritmo preenche uma lista com valores aleatórios de 0 a 30 e chama uma função para retornar uma nova lista,
-que mapeia a lista original percorrendo seus elementos e realizando a operação potência de dois neles, através de uma expressão lambda.
+> que mapeia a lista original percorrendo seus elementos e realizando a operação potência de dois neles, através de uma expressão lambda.
 
 ```Java
 
