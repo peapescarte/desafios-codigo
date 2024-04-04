@@ -214,3 +214,5 @@ int main(){
 
 ## Explicação:
 A função retorna um novo vetor com a função f(x) = x² aplicada a todos os elementos do original. Para isso, utiliza um laço for e cada posição do novo vetor recebe o resultado da função quando aplicada ao elemento original.
+
+> __Complexidade: O(n) em tempo e O(n) em memória.__
